@@ -47,6 +47,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 props.projectId !== null &&
                 typeof props.projectId !== 'undefined'
             ) {
+                console.log('setProjectid',props.projectId)
                 this.props.setProjectId(props.projectId.toString());
             }
         }

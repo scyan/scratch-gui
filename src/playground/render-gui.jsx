@@ -62,7 +62,6 @@ export default appTarget => {
         // Warn before navigating away
         window.onbeforeunload = () => true;
     }
-
     ReactDOM.render(
         // important: this is checking whether `simulateScratchDesktop` is truthy, not just defined!
         simulateScratchDesktop ?
@@ -79,7 +78,7 @@ export default appTarget => {
                 showComingSoon
                 showPreviewInfo
                 backpackHost={backpackHost}
-                canSave={false}
+                canSave={true}
                 onClickLogo={onClickLogo}
             />,
         appTarget);

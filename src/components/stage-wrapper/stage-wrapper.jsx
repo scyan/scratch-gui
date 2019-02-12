@@ -10,16 +10,17 @@ import Loader from '../loader/loader.jsx';
 
 import styles from './stage-wrapper.css';
 
+import VirtualKeyboard from '../virtual-keyboard/virtual-keyboard.jsx';
 const StageWrapperComponent = function (props) {
     const {
         isFullScreen,
         isRtl,
         isRendererSupported,
+        isPlayerOnly,
         loading,
         stageSize,
         vm
     } = props;
-
     return (
         <Box
             className={styles.stageWrapper}
@@ -41,6 +42,7 @@ const StageWrapperComponent = function (props) {
                         null
                 }
             </Box>
+            {isPlayerOnly?<VirtualKeyboard vm={vm}/>:null}
             {loading ? (
                 <Loader isFullScreen={isFullScreen} />
             ) : null}

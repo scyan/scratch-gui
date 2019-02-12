@@ -130,6 +130,7 @@ const reducer = function (state, action) {
         }
         return state;
     case DONE_FETCHING_WITH_ID:
+        console.log('DONE_FETCHING_WITH_ID',state.loadingState,LoadingState.FETCHING_WITH_ID)
         if (state.loadingState === LoadingState.FETCHING_WITH_ID) {
             return Object.assign({}, state, {
                 loadingState: LoadingState.LOADING_VM_WITH_ID,
@@ -229,6 +230,7 @@ const reducer = function (state, action) {
             loadingState: LoadingState.SHOWING_WITH_ID
         });
     case SET_PROJECT_ID:
+        console.log('SET_PROJECT_ID')
         // if the projectId hasn't actually changed do nothing
         if (state.projectId === action.projectId) {
             return state;

@@ -124,7 +124,7 @@ const cloudManagerHOC = function (WrappedComponent) {
     }
 
     CloudManager.propTypes = {
-        canSave: PropTypes.bool.isRequired,
+        // canSave: PropTypes.bool.isRequired,
         cloudHost: PropTypes.string,
         hasCloudPermission: PropTypes.bool,
         hasEverEnteredEditor: PropTypes.bool,
