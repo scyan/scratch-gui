@@ -3,7 +3,6 @@ import 'es6-object-assign/auto';
 import 'core-js/fn/array/includes';
 import 'core-js/fn/promise/finally';
 import 'intl'; // For Safari 9
-const EventEmitter = require('events');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -19,13 +18,13 @@ analytics.pageview('/');
 
 const appTarget = document.createElement('div');
 appTarget.className = styles.app;
-document.body.appendChild(appTarget);
+// document.body.appendChild(appTarget);
 
 if (supportedBrowser()) {
     // require needed here to avoid importing unsupported browser-crashing code
     // at the top level
-    // require('./player.jsx')
-    require('./render-gui.jsx').default(appTarget);
+    require('./player.jsx')
+    // require('./render-gui.jsx').default(appTarget);
 
 } else {
     BrowserModalComponent.setAppElement(appTarget);
