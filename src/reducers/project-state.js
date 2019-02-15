@@ -130,7 +130,6 @@ const reducer = function (state, action) {
         }
         return state;
     case DONE_FETCHING_WITH_ID:
-        console.log('DONE_FETCHING_WITH_ID',state.loadingState,LoadingState.FETCHING_WITH_ID)
         if (state.loadingState === LoadingState.FETCHING_WITH_ID) {
             return Object.assign({}, state, {
                 loadingState: LoadingState.LOADING_VM_WITH_ID,
@@ -308,6 +307,7 @@ const reducer = function (state, action) {
         }
         return state;
     case START_MANUAL_UPDATING:
+    console.log(JSON.parse(state.projectData))
         if (state.loadingState === LoadingState.SHOWING_WITH_ID) {
             return Object.assign({}, state, {
                 loadingState: LoadingState.MANUAL_UPDATING

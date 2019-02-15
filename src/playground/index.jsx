@@ -18,19 +18,19 @@ analytics.pageview('/');
 
 const appTarget = document.createElement('div');
 appTarget.className = styles.app;
-// document.body.appendChild(appTarget);
+document.body.appendChild(appTarget);
 
 if (supportedBrowser()) {
     // require needed here to avoid importing unsupported browser-crashing code
     // at the top level
-    require('./player.jsx')
-    // require('./render-gui.jsx').default(appTarget);
+    // require('./player.jsx')
+    require('./render-gui.jsx').default(appTarget);
 
 } else {
     BrowserModalComponent.setAppElement(appTarget);
     const WrappedBrowserModalComponent = AppStateHOC(BrowserModalComponent, true /* localesOnly */);
     const handleBack = () => {};
-    // eslint-disable-next-line react/jsx-no-bind
+    // eslint-disable-next-line react/jsx-no -bind
     ReactDOM.render(<WrappedBrowserModalComponent onBack={handleBack} />, appTarget);
 }
 
